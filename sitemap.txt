@@ -1,0 +1,3 @@
+http://yoursite.com/2022/05/31/blog-test/
+http://yoursite.com/2022/05/31/hello-world/
+http://yoursite.com/
