@@ -6,7 +6,7 @@
   <link href="https://jeffery-ws.github.io/atom.xml" rel="self"/>
   
   <link href="https://jeffery-ws.github.io/"/>
-  <updated>2022-12-20T06:52:01.649Z</updated>
+  <updated>2022-12-20T07:21:50.386Z</updated>
   <id>https://jeffery-ws.github.io/</id>
   
   <author>
@@ -21,8 +21,15 @@
     <link href="https://jeffery-ws.github.io/2022/12/20/Algorithm/"/>
     <id>https://jeffery-ws.github.io/2022/12/20/Algorithm/</id>
     <published>2022-12-20T06:52:01.000Z</published>
-    <updated>2022-12-20T06:52:01.649Z</updated>
+    <updated>2022-12-20T07:21:50.386Z</updated>
     
+    <content type="html"><![CDATA[<h1 id="语言基础"><a href="#语言基础" class="headerlink" title="语言基础"></a>语言基础</h1><p><img src="/2022/12/20/Algorithm/hello_world.png" alt="hello_world"></p><p>cin从标准输入设备（键盘）中获取数据，通过提取运算符“&gt;&gt;”从流中提取数据，然后发送给cin对象，由cin对象将数据发送到指定的地方。cin是带缓冲区的输入流对象，只有在输入完数据并按下回车键后，该行数据才被送入键盘缓冲区，形成输入流，提取运算符“&gt;&gt;”才能从中提取数据。例如：</p><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> a, b;</span><br><span class="line">cin&gt;&gt;a&gt;&gt;b;</span><br><span class="line"></span><br><span class="line">string s;</span><br><span class="line"><span class="type">float</span> f;</span><br><span class="line">cin&gt;&gt;s&gt;&gt;f;</span><br><span class="line"></span><br><span class="line"><span class="type">char</span> str[<span class="number">10</span>];</span><br><span class="line">cin&gt;&gt;str;</span><br></pre></td></tr></table></figure><p>cout是ostream类的对象，对应的标准设备为屏幕，叫作标准输出对象或屏幕输出对象，但也可被重定向输出到磁盘文件。用户可以通过cout对象调用ostream类的插入运算符和成员函数来输出信息。</p><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">cout&lt;&lt;<span class="number">10</span>&lt;&lt;endl;</span><br><span class="line">cout&lt;&lt;<span class="string">&#x27;a&#x27;</span>&lt;&lt;endl;</span><br><span class="line">cout&lt;&lt;<span class="string">&quot;C++&quot;</span>&lt;&lt;endl;</span><br><span class="line"></span><br><span class="line"><span class="comment">//利用cout对象输出变量的值。在用cout输出变量值时，不必设置以什么格式输出，“&lt;&lt;”运算符会根据变量的数据类型自动调用相匹配的重载函数来正确输出，这比C语言中的printf()函数的用法更简便。例如：</span></span><br><span class="line"><span class="type">int</span> a = <span class="number">10</span>;</span><br><span class="line">string s = <span class="string">&quot;C++&quot;</span>;</span><br><span class="line"><span class="type">float</span> f = <span class="number">1.2</span>;</span><br><span class="line">cout&lt;&lt;a&lt;&lt;endl; <span class="comment">//输出int类型的变量</span></span><br><span class="line">cout&lt;&lt;s&lt;&lt;endl; <span class="comment">//输出string类型的变量</span></span><br><span class="line">cout&lt;&lt;f&lt;&lt;endl; <span class="comment">//输出float类型的变量</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//利用cout对象输出指针、引用类型的数据。当输出数据为指针或引用类型时，与printf()函数的用法一致，不带“*”符号输出的是指针的值，即变量的地址；带“*”符号输出的是指针指向的变量的值。它比printf()函数简便之处在于不必设置数据的输出格式。例如：</span></span><br><span class="line"><span class="type">int</span> a=<span class="number">10</span>, *p;</span><br><span class="line"><span class="type">int</span> &amp;b=a;      <span class="comment">//引用,变量b和a指向同一个空间</span></span><br><span class="line">p = &amp;a;        <span class="comment">//指针p存储变量a的地址</span></span><br><span class="line">string s = <span class="string">&quot;C++&quot;</span>;</span><br><span class="line">string *ps = &amp;s;</span><br><span class="line">cout&lt;&lt;p&lt;&lt;endl;</span><br><span class="line">cout&lt;&lt;b&lt;&lt;endl;</span><br><span class="line">cout&lt;&lt;*p&lt;&lt;endl;</span><br><span class="line">cout&lt;&lt;ps&lt;&lt;endl;</span><br><span class="line">cout&lt;&lt;*ps&lt;&lt;endl;</span><br></pre></td></tr></table></figure>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;语言基础&quot;&gt;&lt;a href=&quot;#语言基础&quot; class=&quot;headerlink&quot; title=&quot;语言基础&quot;&gt;&lt;/a&gt;语言基础&lt;/h1&gt;&lt;p&gt;&lt;img src=&quot;/2022/12/20/Algorithm/hello_world.png&quot; alt=&quot;hello_wo</summary>
+      
     
     
     
